@@ -1,0 +1,156 @@
+{
+  "name": "jsx",
+  "version": "0.9.1",
+  "description": "Four core JSX tools designed for Solid JS",
+  "license": "MIT",
+  "author": "arksouthern",
+  "keywords": [
+    "solid",
+    "jsx",
+    "pattern-matching",
+    "ui",
+    "components"
+  ],
+  "contributors": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arksouthern/jsx.git"
+  },
+  "homepage": "https://github.com/arksouthern/jsx#readme",
+  "bugs": {
+    "url": "https://github.com/arksouthern/jsx/issues"
+  },
+  "files": [
+    "dist"
+  ],
+  "private": false,
+  "sideEffects": false,
+  "type": "module",
+  "main": "./dist/ax/index.js",
+  "module": "./dist/ax/index.js",
+  "types": "./dist/ax/index.d.ts",
+  "browser": {},
+  "exports": {
+    "./ax": {
+      "solid": {
+        "development": "./dist/ax/dev.jsx",
+        "import": "./dist/ax/index.jsx"
+      },
+      "development": {
+        "import": {
+          "types": "./dist/ax/index.d.ts",
+          "default": "./dist/ax/dev.js"
+        }
+      },
+      "import": {
+        "types": "./dist/ax/index.d.ts",
+        "default": "./dist/ax/index.js"
+      }
+    },
+    "./hx": {
+      "solid": {
+        "development": "./dist/hx/dev.jsx",
+        "import": "./dist/hx/index.jsx"
+      },
+      "development": {
+        "import": {
+          "types": "./dist/hx/index.d.ts",
+          "default": "./dist/hx/dev.js"
+        }
+      },
+      "import": {
+        "types": "./dist/hx/index.d.ts",
+        "default": "./dist/hx/index.js"
+      }
+    },
+    "./mx": {
+      "solid": {
+        "development": "./dist/mx/dev.jsx",
+        "import": "./dist/mx/index.jsx"
+      },
+      "development": {
+        "import": {
+          "types": "./dist/mx/index.d.ts",
+          "default": "./dist/mx/dev.js"
+        }
+      },
+      "import": {
+        "types": "./dist/mx/index.d.ts",
+        "default": "./dist/mx/index.js"
+      }
+    },
+    "./vx": {
+      "solid": {
+        "development": "./dist/vx/dev.jsx",
+        "import": "./dist/vx/index.jsx"
+      },
+      "development": {
+        "import": {
+          "types": "./dist/vx/index.d.ts",
+          "default": "./dist/vx/dev.js"
+        }
+      },
+      "import": {
+        "types": "./dist/vx/index.d.ts",
+        "default": "./dist/vx/index.js"
+      }
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "ax": [
+        "./dist/ax/index.d.ts"
+      ],
+      "hx": [
+        "./dist/hx/index.d.ts"
+      ],
+      "mx": [
+        "./dist/mx/index.d.ts"
+      ],
+      "vx": [
+        "./dist/vx/index.d.ts"
+      ]
+    }
+  },
+  "scripts": {
+    "dev": "vite serve dev",
+    "build": "tsup",
+    "test": "concurrently pnpm:test:*",
+    "test:client": "vitest",
+    "test:ssr": "pnpm run test:client --mode ssr",
+    "prepublishOnly": "pnpm build",
+    "format": "prettier --ignore-path .gitignore -w \"src/**/*.{js,ts,json,css,tsx,jsx}\" \"dev/**/*.{js,ts,json,css,tsx,jsx}\"",
+    "lint": "concurrently pnpm:lint:*",
+    "lint:code": "eslint --ignore-path .gitignore --max-warnings 0 src/**/*.{js,ts,tsx,jsx}",
+    "lint:types": "tsc --noEmit",
+    "update-deps": "pnpm up -Li"
+  },
+  "peerDependencies": {
+    "solid-js": "^1.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "@typescript-eslint/eslint-plugin": "^7.9.0",
+    "@typescript-eslint/parser": "^7.9.0",
+    "concurrently": "^8.2.2",
+    "esbuild": "^0.21.3",
+    "esbuild-plugin-solid": "^0.6.0",
+    "eslint": "^8.56.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-no-only-tests": "^3.1.0",
+    "jsdom": "^24.0.0",
+    "prettier": "3.0.0",
+    "solid-js": "^1.8.17",
+    "tsup": "^8.0.2",
+    "tsup-preset-solid": "^2.2.0",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.11",
+    "vite-plugin-solid": "^2.10.2",
+    "vitest": "^1.6.0"
+  },
+  "packageManager": "pnpm@9.1.1",
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=9.0.0"
+  }
+}

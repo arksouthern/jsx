@@ -1,0 +1,21 @@
+# build output
+target
+bin/cli.*
+cache
+
+# dependencies
+node_modules
+
+# logs
+npm-debug.log
+yarn-error.log
+
+# optional dev config file and plugins directory
+hyper.json
+schema.json
+plugins
+
+.DS_Store
+.vscode/*
+!.vscode/launch.json
+.idea
