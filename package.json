@@ -1,6 +1,6 @@
 {
-  "name": "jsx",
-  "version": "0.9.1",
+  "name": "@arksouthern/jsx",
+  "version": "0.9.2",
   "description": "Four core JSX tools designed for Solid JS",
   "license": "MIT",
   "author": "arksouthern",
@@ -11,6 +11,18 @@
     "ui",
     "components"
   ],
+  "scripts": {
+    "dev": "vite serve dev",
+    "build": "tsup",
+    "test": "concurrently pnpm:test:*",
+    "test:client": "vitest",
+    "test:ssr": "pnpm run test:client --mode ssr",
+    "format": "prettier --ignore-path .gitignore -w \"src/**/*.{js,ts,json,css,tsx,jsx}\" \"dev/**/*.{js,ts,json,css,tsx,jsx}\"",
+    "lint": "concurrently pnpm:lint:*",
+    "lint:code": "eslint --ignore-path .gitignore --max-warnings 0 src/**/*.{js,ts,tsx,jsx}",
+    "lint:types": "tsc --noEmit",
+    "update-deps": "pnpm up -Li"
+  },
   "contributors": [],
   "repository": {
     "type": "git",
@@ -111,19 +123,6 @@
         "./dist/vx/index.d.ts"
       ]
     }
-  },
-  "scripts": {
-    "dev": "vite serve dev",
-    "build": "tsup",
-    "test": "concurrently pnpm:test:*",
-    "test:client": "vitest",
-    "test:ssr": "pnpm run test:client --mode ssr",
-    "prepublishOnly": "pnpm build",
-    "format": "prettier --ignore-path .gitignore -w \"src/**/*.{js,ts,json,css,tsx,jsx}\" \"dev/**/*.{js,ts,json,css,tsx,jsx}\"",
-    "lint": "concurrently pnpm:lint:*",
-    "lint:code": "eslint --ignore-path .gitignore --max-warnings 0 src/**/*.{js,ts,tsx,jsx}",
-    "lint:types": "tsc --noEmit",
-    "update-deps": "pnpm up -Li"
   },
   "peerDependencies": {
     "solid-js": "^1.6.0"
